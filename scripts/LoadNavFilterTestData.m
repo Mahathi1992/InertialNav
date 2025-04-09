@@ -65,11 +65,11 @@ save('NavFilterTestData.mat', ...
     'MAGframe','MAGtime','MagX','MagY','MagZ','MagBiasX','MagBiasY','MagBiasZ', ...
     'ATTframe','ATTtime','Roll','Pitch','Yaw', ...
     'ADSframe','ADStime','Veas','HgtBaro');
-save('../code/IMU.txt','IMU','-ascii');
-save('../code/GPS.txt','GPS','-ascii');
-save('../code/MAG.txt','MAG','-ascii')
-save('../code/ATT.txt','ATT','-ascii');
-save('../code/NTUN.txt','NTUN','-ascii');
+% save('../code/IMU.txt','IMU','-ascii');
+% save('../code/GPS.txt','GPS','-ascii');
+% save('../code/MAG.txt','MAG','-ascii')
+% save('../code/ATT.txt','ATT','-ascii');
+% save('../code/NTUN.txt','NTUN','-ascii');
 clear all;
 load('NavFilterTestData.mat');
 alignTime = min(IMUtime(IMUframe>GPSframe(find(GndSpd  >8, 1 )))) - 10;
@@ -81,4 +81,4 @@ msecHgtDelay = 420;
 msecMagDelay = 30;
 msecTasDelay = 200;
 EAS2TAS = 1.0;
-save('../code/timing.txt','alignTime','startTime','endTime','msecVelDelay','msecPosDelay','msecHgtDelay','msecMagDelay','msecTasDelay','EAS2TAS','-ascii');
+% save('../code/timing.txt','alignTime','startTime','endTime','msecVelDelay','msecPosDelay','msecHgtDelay','msecMagDelay','msecTasDelay','EAS2TAS','-ascii');

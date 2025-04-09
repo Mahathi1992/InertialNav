@@ -35,8 +35,8 @@ plot(time_est,[yaw_est,euler_ref(:,3)]);
 grid on;
 ylim([-200 200]);
 xlabel('time (sec)');ylabel('yaw (deg)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% NED velocity
 fileName = 'VelocityEstimates';
@@ -66,8 +66,8 @@ plot(time_est,velD_est-sqrt(variance_est(:,7)),'r:');
 hold off
 grid on;
 xlabel('time (sec)');ylabel('Down Velocity (m/s)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% NE Position and Height
 fileName = 'PositionEstimates';
@@ -97,8 +97,8 @@ plot(time_est,-posD_est-sqrt(variance_est(:,10)),'r:');
 hold off
 grid on;
 xlabel('time (sec)');ylabel('Height (m)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% Gyro Bias
 fileName = 'GyroBiasEstimates';
@@ -128,8 +128,8 @@ plot(time_est,(dAngBiasZ_est-sqrt(variance_est(:,13)))*50*60*180/pi,'r:');
 hold off
 grid on;
 xlabel('time (sec)');ylabel('Z bias (deg/min)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% Accelerometer Bias
 fileName = 'AccelBiasEstimates';
@@ -159,8 +159,8 @@ plot(time_est,(dVelBiasZ_est-sqrt(variance_est(:,16)))*50,'r:');
 hold off
 grid on;
 xlabel('time (sec)');ylabel('Z bias (m/s^2)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% Wind Velocity
 fileName = 'WindVelEstimates';
@@ -182,8 +182,8 @@ plot(time_est,(velWE_est-sqrt(variance_est(:,18))),'r:');
 hold off
 grid on;
 xlabel('time (sec)');ylabel('East Velocity (m/s)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% NED Magnetic Field
 fileName = 'EarthMagEstimates';
@@ -213,8 +213,8 @@ plot(time_est,(magD_est-sqrt(variance_est(:,21))),'r:');
 hold off
 grid on;
 xlabel('time (sec)');ylabel('Down Flux (mgauss)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% XYZ Magnetic Field
 fileName = 'BodyMagEstimates';
@@ -244,8 +244,8 @@ plot(time_est,(magZ_est-sqrt(variance_est(:,23))),'r:');
 hold off
 grid on;
 xlabel('time (sec)');ylabel('Z Flux (mgauss)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% Position & Height Innovations
 fileName = 'PosInnovations';
@@ -263,8 +263,8 @@ subplot(3,1,3);
 plot(time4,innovPosD);
 grid on;
 xlabel('time (sec)');ylabel('Down (m)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% Velocity Innovations
 fileName = 'VelInovations';
@@ -282,8 +282,8 @@ subplot(3,1,3);
 plot(time1,innovVelD);
 grid on;
 xlabel('time (sec)');ylabel('Down (m/s)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% Magnetometer Innovations
 nSamples = min([length(innovMagX),length(innovMagY),length(innovMagZ)]);
@@ -302,8 +302,8 @@ subplot(3,1,3);
 plot(time2(1:nSamples),innovMagZ(1:nSamples,:));
 grid on;
 xlabel('time (sec)');ylabel('Z Flux (mgauss)');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
 
 %% Airspeed Innovations
 fileName = 'AirSpeedInnovations';
@@ -312,5 +312,5 @@ plot(time3,innovVtas);
 grid on;
 xlabel('time (sec)');ylabel('airspeed (m/s)');
 title('Airspeed Measurement Innovations');
-saveas(gcf,strcat(dirName,fileName,'.fig'));
-saveas(gcf,strcat(dirName,fileName,'.pdf'));
+% saveas(gcf,strcat(dirName,fileName,'.fig'));
+% saveas(gcf,strcat(dirName,fileName,'.pdf'));
